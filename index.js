@@ -379,11 +379,58 @@
 
 
 //===using pakage fs===
-const fs=require("fs")
-fs.writeFile("myfile.txt","hii good morning",(err)=>{
-console.log(err ||"save file")
-})
-fs.readFile("myfile.txt","utf8",(err,data)=>{
-   console.log(err || "file content",data)
-})
+// const fs=require("fs")
+// fs.writeFile("myfile.txt","hii good morning",(err)=>{
+// console.log(err ||"save file")
+// })
+// fs.readFile("myfile.txt","utf8",(err,data)=>{
+//    console.log(err || "file content",data)
+// })
 
+
+// const express=require('express')
+// const app=express()
+
+
+// app.get('/',(req,res)=>{
+//    res.send("hello mca students")
+// });
+
+// app.get("/home",(req,res)=>{
+//    res.send("home page")
+// });
+
+// app.listen(3000,()=>{
+//    console.log("server is running at http://localhost:3000/")
+// });
+
+const express=require('express')
+ const app=express()
+app.use(express.json())
+
+//index
+// app.get('/',(req,res)=>{
+//    res.send("all student")
+// }
+
+
+
+// //show-
+// app.get("/show/:id",(req,res)=>{
+//    res.send('show student with id:${req.params.id}')
+// })
+
+//store
+// app.post("/store",(req,res)=>{
+//    res.send(`insert ${req.body.name}into database`)
+// })
+
+//update
+.send('update ${req.params.id}')
+
+
+
+app.listen(3000,()=>{
+     console.log("server is running at http://localhost:3000/")
+   });
+   
