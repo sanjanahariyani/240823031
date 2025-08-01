@@ -404,9 +404,9 @@
 //    console.log("server is running at http://localhost:3000/")
 // });
 
-const express=require('express')
- const app=express()
-app.use(express.json())
+// const express=require('express')
+//  const app=express()
+// app.use(express.json())
 
 //index
 // app.get('/',(req,res)=>{
@@ -416,21 +416,50 @@ app.use(express.json())
 
 
 // //show-
-// app.get("/show/:id",(req,res)=>{
-//    res.send('show student with id:${req.params.id}')
-// })
+//  app.get("/show/:id",(req,res)=>{
+//     res.send('show student with id:${req.params.id}')
+//  })
 
 //store
-// app.post("/store",(req,res)=>{
-//    res.send(`insert ${req.body.name}into database`)
+//  app.post("/store",(req,res)=>{
+//     res.send(`insert ${req.body.name}into database`)
 // })
 
 //update
-.send('update ${req.params.id}')
+// app.put("/update/:id",(req,res)=>{
+// res.send(`update ${req.params.id}-${req.body.name},${req.body.city}into database`)})
 
+//delete
+// app.delete("/delete/:id",(req,res)=>{
+//    res.send("delete name")
+// })
 
+// app.listen(3000,()=>{
+//      console.log("server is running at http://localhost:3000/")
+//    });
 
-app.listen(3000,()=>{
-     console.log("server is running at http://localhost:3000/")
-   });
+//===========================================================
+const express=require("express")
+const{
+   index,
+   show,
+   store,
+   update,
+}=require("./controller/studentcontroller.js")
+
+const app=express()
+const port=80
+app.use(express.json())
+
+app.get("/",index)
+
+app.get("/show/:id",show)
+
+app.post("/store",store)
+
+app.put("/update/:id",update)
+
+app.listen(port,()=>{
+         console.log("server is running at http://localhost:80/")
+       });
    
