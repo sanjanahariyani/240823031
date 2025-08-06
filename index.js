@@ -445,6 +445,7 @@ const{
    show,
    store,
    update,
+   destroy
 }=require("./controller/studentcontroller.js")
 
 const app=express()
@@ -458,6 +459,9 @@ app.get("/show/:id",show)
 app.post("/store",store)
 
 app.put("/update/:id",update)
+
+app.delete("/delete/:id",destroy)
+
 
 app.listen(port,()=>{
          console.log("server is running at http://localhost:80/")

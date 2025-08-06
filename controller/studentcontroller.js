@@ -11,7 +11,9 @@ exports.show=(req,res)=>{
  }
 
  exports.update=(req,res)=>{
-  res.send(
-      `data updated!\nid: ${req.params.id}, name: ${req.body.name}, ${req.body.city}`
-  )
- }
+  res.send(`data updated!\nid: ${req.params.id}, name: ${req.body.name}, ${req.body.city}`
+  )}
+ exports.destroy=(req,res)=>{
+  res.send(`code delete id: ${req.params.id}`)
+  }
+ 
